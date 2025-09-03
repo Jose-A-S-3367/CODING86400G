@@ -11,4 +11,4 @@ extern Drive chassis;
  inline pros::Motor intake2(20, pros::MotorGearset::blue);
  inline pros::Motor wallstake(1);
  inline pros::Motor wallstake(1);
- inline pros::ADIDigitalOut MOGO('A');
+ inline pros::ADIDigitalOut LoaderClear('A');
