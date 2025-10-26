@@ -32,7 +32,9 @@ ez::Drive chassis(
 void initialize() {
   // Print our branding over your terminal :D
   ez::ez_template_print();
-
+  intake.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
+  intake2.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
+  intake3.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
   pros::delay(500);  // Stop the user from doing anything while legacy ports configure
 
   // Look at your horizontal tracking wheel and decide if it's in front of the midline of your robot or behind it
@@ -66,7 +68,7 @@ void initialize() {
       {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
       {"Combine all 3 movements", combining_movements},
       {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-     
+      {"Right Side code", rightside},
   });
 
   // Initialize chassis and auton selector
@@ -251,10 +253,10 @@ void opcontrol() {
     // . . .
     // Put more user control code here!
     // intake control
-    if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+    if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
       intake.move_velocity(600);
     }
-      else if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
+      else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
       intake.move_velocity(-600);
     }
         else{
@@ -263,10 +265,10 @@ void opcontrol() {
 
 
         // intake 2 control
-        if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+        if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
           intake2.move_velocity(600);
         }
-          else if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
+          else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
           intake2.move_velocity(-600);
         }
             else {
@@ -274,7 +276,33 @@ void opcontrol() {
             }
 
 
-            // wall stake control
-    pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
-  }
-}
+            // intake 3 control
+            if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
+              intake3.move_velocity(300);
+            }
+              else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
+              intake3.move_velocity(-300);
+            }
+                else {
+              intake3.move_velocity(0);
+                } 
+              
+
+                // laneswitch control
+                if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
+                  laneswitch.set_value(true)
+                }
+                  else if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+                  laneswitch.set_value(false)
+                  }
+                  // loaderclear control
+                  if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+                    loaderclear.set_value(true)
+                  }
+                    else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+                      loaderclear.set_value(false)
+                    }
+
+
+pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
+  }\
