@@ -8,12 +8,12 @@ using namespace pros;
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {1, 2, 3},  // Left Chassis Ports (negative port will reverse it!)
-    {4, 5, 6},  // Right Chassis Ports (negative port will reverse it!)
+    {-11, -13, -2},  // Left Chassis Ports (negative port will reverse it!)
+    {1, 3, 12},  // Right Chassis Ports (negative port will reverse it!)
 
     5,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
-    200);  // Wheel RPM = cartridge * (motor gear / wheel gear)
+    360);  // Wheel RPM = cartridge * (motor gear / wheel gear)
 
 // Uncomment the trackers you're using here!
 // - `8` and `9` are smart ports (making these negative will reverse the sensor)
@@ -278,10 +278,10 @@ void opcontrol() {
 
             // intake 3 control
             if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-              intake3.move_velocity(300);
+              intake3.move_velocity(-300);
             }
               else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-              intake3.move_velocity(-300);
+              intake3.move_velocity(300);
             }
                 else {
               intake3.move_velocity(0);

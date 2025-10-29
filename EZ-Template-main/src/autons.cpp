@@ -379,5 +379,20 @@ void measure_offsets() {
 
 void rightside() {
 
+  laneswitch.set_value(true);
+  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  intake.move_velocity(600);
+
+  intake2.move_velocity(600);
+
+  intake3.move_velocity(50);
+
+  chassis.pid_drive_set(-14_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
 
 }
