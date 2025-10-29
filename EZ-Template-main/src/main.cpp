@@ -290,19 +290,20 @@ void opcontrol() {
 
                 // laneswitch control
                 if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
-                  laneswitch.set_value(true)
+                  laneswitch.set_value(true);
                 }
                   else if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
-                  laneswitch.set_value(false)
+                  laneswitch.set_value(false);
                   }
                   // loaderclear control
                   if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
-                    loaderclear.set_value(true)
+                    loaderclear.set_value(true);
                   }
                     else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
-                      loaderclear.set_value(false)
+                      loaderclear.set_value(false);
                     }
 
 
 pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
-  }\
+  }
+}
