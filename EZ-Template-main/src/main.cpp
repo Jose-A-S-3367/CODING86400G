@@ -8,8 +8,8 @@ using namespace pros;
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {-11, -13, -2},  // Left Chassis Ports (negative port will reverse it!)
-    {1, 3, 12},  // Right Chassis Ports (negative port will reverse it!)
+    {-11, -13, 12},  // Left Chassis Ports (negative port will reverse it!)
+    {1, 3, 2},  // Right Chassis Ports (negative port will reverse it!)
 
     5,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
@@ -278,10 +278,10 @@ void opcontrol() {
 
             // intake 3 control
             if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-              intake3.move_velocity(-300);
+              intake3.move_velocity(-150);
             }
               else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-              intake3.move_velocity(300);
+              intake3.move_velocity(150);
             }
                 else {
               intake3.move_velocity(0);
@@ -296,10 +296,10 @@ void opcontrol() {
                   laneswitch.set_value(false);
                   }
                   // loaderclear control
-                  if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+                  if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
                     loaderclear.set_value(true);
                   }
-                    else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+                    else if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
                       loaderclear.set_value(false);
                     }
 
