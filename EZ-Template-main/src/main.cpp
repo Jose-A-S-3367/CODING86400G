@@ -8,10 +8,10 @@ using namespace pros;
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {-11, -13, 12},  // Left Chassis Ports (negative port will reverse it!)
-    {1, 3, 2},  // Right Chassis Ports (negative port will reverse it!)
+    {-3, -1, 16},  // Left Chassis Ports (negative port will reverse it!)
+    {13, 11, -6},  // Right Chassis Ports (negative port will reverse it!)
 
-    5,      // IMU Port
+    7,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     360);  // Wheel RPM = cartridge * (motor gear / wheel gear)
 
@@ -245,7 +245,7 @@ void opcontrol() {
     ez_template_extras();
 
     // chassis.opcontrol_tank();  // Tank control
-     chassis.opcontrol_arcade_standard(ez::SPLIT);   // Standard split arcade
+    chassis.opcontrol_arcade_standard(ez::SPLIT);   // Standard split arcade
     // chassis.opcontrol_arcade_standard(ez::SINGLE);  // Standard single arcade
     // chassis.opcontrol_arcade_flipped(ez::SPLIT);    // Flipped split arcade
     // chassis.opcontrol_arcade_flipped(ez::SINGLE);   // Flipped single arcade
