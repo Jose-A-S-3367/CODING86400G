@@ -296,11 +296,11 @@ void opcontrol() {
                   laneswitch.set_value(false);
                   }
                   // loaderclear control
-                  if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
-                    loaderclear.set_value(true);
+                  if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+                    loaderclear.set_value(false);
                   }
-                    else if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
-                      loaderclear.set_value(false);
+                    else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+                      loaderclear.set_value(true);
                     }
 
 

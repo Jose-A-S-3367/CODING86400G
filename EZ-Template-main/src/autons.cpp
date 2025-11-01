@@ -379,6 +379,7 @@ void measure_offsets() {
 
 void rightside() {
 
+  loaderclear.set_value(false);
   laneswitch.set_value(true);
   chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
   chassis.pid_wait();
