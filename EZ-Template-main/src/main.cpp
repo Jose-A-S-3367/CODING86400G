@@ -60,15 +60,15 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-      {"Drive\n\nDrive forward and come back", drive_example},
-      {"Turn\n\nTurn 3 times.", turn_example},
-      {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
-      {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
-      {"Swing Turn\n\nSwing in an 'S' curve", swing_example},
-      {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
-      {"Combine all 3 movements", combining_movements},
-      {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-      {"Right Side code", rightside},
+      // {"Drive\n\nDrive forward and come back", drive_example},
+      // {"Turn\n\nTurn 3 times.", turn_example},
+      // {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
+      // {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
+      // {"Swing Turn\n\nSwing in an 'S' curve", swing_example},
+      // {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
+      // {"Combine all 3 movements", combining_movements},
+      // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
+      {"Right Side code", rightside}
   });
 
   // Initialize chassis and auton selector
@@ -238,7 +238,7 @@ void ez_template_extras() {
  */
 void opcontrol() {
   // This is preference to what you like to drive on
-  chassis.drive_brake_set(MOTOR_BRAKE_COAST);
+  chassis.drive_brake_set(MOTOR_BRAKE_HOLD);
 
   while (true) {
     // Gives you some extras to make EZ-Template ezier
@@ -254,54 +254,41 @@ void opcontrol() {
     // Put more user control code here!
     // intake control
     if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-      intake.move_velocity(600);
+      intake.move_velocity(-600);
+      intake2.move_velocity(-600);
+      if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+        intake3.move_velocity(500);
+      } else{
+        intake3.move_velocity(-500);
+      }
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-      intake.move_velocity(-600);
+      intake.move_velocity(600);
+      intake2.move_velocity(600);
+      intake3.move_velocity(-500);
+    } else{
+      intake.brake();
+      intake2.brake();
+      intake3.brake();
     }
-        else{
-      intake.move_velocity(0);
+
+
+     
+
+    // laneswitch control
+    if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
+      laneswitch.set_value(true);
+    }
+      else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
+      laneswitch.set_value(false);
+      }
+      // loaderclear control
+      if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+        loaderclear.set_value(false);
+      }
+        else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+          loaderclear.set_value(true);
         }
-
-
-        // intake 2 control
-        if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-          intake2.move_velocity(600);
-        }
-          else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-          intake2.move_velocity(-600);
-        }
-            else {
-          intake2.move_velocity(0);
-            }
-
-
-            // intake 3 control
-            if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-              intake3.move_velocity(-150);
-            }
-              else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-              intake3.move_velocity(150);
-            }
-                else {
-              intake3.move_velocity(0);
-                } 
-              
-
-                // laneswitch control
-                if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
-                  laneswitch.set_value(true);
-                }
-                  else if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
-                  laneswitch.set_value(false);
-                  }
-                  // loaderclear control
-                  if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
-                    loaderclear.set_value(false);
-                  }
-                    else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
-                      loaderclear.set_value(true);
-                    }
 
 
 pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME

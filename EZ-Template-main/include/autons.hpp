@@ -2,6 +2,7 @@
 
 void default_constants();
 
+void rightside();
 void drive_example();
 void turn_example();
 void drive_and_turn();
@@ -16,4 +17,3 @@ void odom_pure_pursuit_wait_until_example();
 void odom_boomerang_example();
 void odom_boomerang_injected_pure_pursuit_example();
 void measure_offsets();
-void rightside();
