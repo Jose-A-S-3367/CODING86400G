@@ -7,8 +7,8 @@ extern Drive chassis;
 
 // Your motors, sensors, etc. should go here.  Below are examples
 
- inline pros::Motor intake(20, pros::MotorGearset::green);
- inline pros::Motor intake2(10, pros::MotorGearset::green);
- inline pros::Motor intake3(4, pros::MotorGearset::blue);
- inline pros::ADIDigitalOut laneswitch('A');
+ inline pros::Motor intake(18, pros::MotorGearset::green);
+ inline pros::Motor intake2(5, pros::MotorGearset::green);
+ inline pros::Motor intake3(6, pros::MotorGearset::blue);
+ inline pros::ADIDigitalOut intakestopper('A');
  inline pros::ADIDigitalOut loaderclear('H');
