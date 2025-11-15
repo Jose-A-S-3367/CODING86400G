@@ -274,12 +274,12 @@ void opcontrol() {
 
      
 
-    // laneswitch control
+    // intakestopper control
     if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
-      laneswitch.set_value(true);
+      intakestopper.set_value(true);
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
-      laneswitch.set_value(false);
+      intakestopper.set_value(false);
       }
       // loaderclear control
       if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
