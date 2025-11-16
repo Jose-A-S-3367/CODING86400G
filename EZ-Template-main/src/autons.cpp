@@ -378,19 +378,19 @@ void measure_offsets() {
 // . . .
 
 void rightside() {
-  
-  loaderclear.set_value(false);
-  laneswitch.set_value(false);
+  //chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
+  //chassis.pid_wait();
+  gate.set_value(false);
   intake.move_velocity(-600);
 
-  intake2.move_velocity(-600);
+  intake2.move_velocity(600);
 
-  intake3.move_velocity(-500);
+  intake3.move_velocity(500);
 
   chassis.pid_drive_set(-36_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(-180_deg, TURN_SPEED);
   chassis.pid_wait();
-
+ 
 }
