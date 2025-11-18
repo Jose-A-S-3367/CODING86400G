@@ -8,8 +8,8 @@ using namespace pros;
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {-7, -8, -9},  // Left Chassis Ports (negative port will reverse it!)
-    {1, 2, 3},  // Right Chassis Ports (negative port will reverse it!)
+    {-1, -2, -3},  // Left Chassis Ports (negative port will reverse it!)
+    {7, 8, 9},  // Right Chassis Ports (negative port will reverse it!)
     11,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     360);  // Wheel RPM = cartridge * (motor gear / wheel gear)
@@ -252,16 +252,16 @@ void opcontrol() {
     // . . .
     // Put more user control code here!
     // intake control
-    if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
+    if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
       intake.move_velocity(-600);
       intake2.move_velocity(600);
-      if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+      if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
         intake3.move_velocity(-500);
       } else{
         intake3.move_velocity(500);
       }
     }
-      else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
+      else if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
       intake.move_velocity(600);
       intake2.move_velocity(-600);
       intake3.move_velocity(500);
