@@ -394,7 +394,7 @@ void rightside() {
   intake.move_velocity(-600);
   intake2.move_velocity(600);
   intake3.move_velocity(500); 
-  pros::delay(3000);
+  pros::delay(1000);
   
   intake.move_velocity(0);
   intake2.move_velocity(0);
@@ -406,7 +406,7 @@ void rightside() {
   intake.move_velocity(-600);
   intake2.move_velocity(600);
   intake3.move_velocity(500); 
-  pros::delay(1000);
+  pros::delay(2000);
   intake3.move_velocity(-500); 
 
 }
