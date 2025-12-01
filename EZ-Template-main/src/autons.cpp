@@ -381,14 +381,14 @@ void rightside() {
   //chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
   //chassis.pid_wait();
 
-  chassis.pid_drive_set(34_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-34_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(90_deg, TURN_SPEED);
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
   chassis.pid_wait();
  
   loaderclear.set_value(true);
-  chassis.pid_drive_set(9_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED, true);
   
   gate.set_value(false);
   intake.move_velocity(-600);
@@ -401,7 +401,7 @@ void rightside() {
   intake3.move_velocity(0); 
   gate.set_value(true);
 
-  chassis.pid_drive_set(-36_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(36_in, DRIVE_SPEED, true);
 
   intake.move_velocity(-600);
   intake2.move_velocity(600);
