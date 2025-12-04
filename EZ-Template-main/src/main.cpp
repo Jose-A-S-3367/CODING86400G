@@ -253,8 +253,8 @@ void opcontrol() {
     // Put more user control code here!
     // intake control
     if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-      intake.move_velocity(-600);
-      intake2.move_velocity(600);
+      intake.move_velocity(600);
+      intake2.move_velocity(-600);
       if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
         intake3.move_velocity(-500);
       } else{
@@ -262,8 +262,8 @@ void opcontrol() {
       }
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-      intake.move_velocity(600);
-      intake2.move_velocity(-600);
+      intake.move_velocity(-600);
+      intake2.move_velocity(600);
       intake3.move_velocity(500);
     } else{
       intake.brake();
