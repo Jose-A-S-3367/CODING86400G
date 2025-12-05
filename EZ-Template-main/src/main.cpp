@@ -274,12 +274,14 @@ void opcontrol() {
 
      
 
-    // gate control
+    // gate/descorer control
     if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
       gate.set_value(true);
+      descorer.set_value(true);
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
       gate.set_value(false);
+      descorer.set_value(false);
       }
       // loaderclear control
       if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
