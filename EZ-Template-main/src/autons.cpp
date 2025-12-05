@@ -394,13 +394,13 @@ void rightside() {
   intake.move_velocity(600);
   intake2.move_velocity(-600);
   intake3.move_velocity(500); 
-  pros::delay(1000);
+  pros::delay(2000);
   intake.move_velocity(0);
   intake2.move_velocity(0);
   intake3.move_velocity(0);
   gate.set_value(true);
 
-  chassis.pid_drive_set(27_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);

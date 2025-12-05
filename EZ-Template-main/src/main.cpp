@@ -9,7 +9,7 @@ using namespace pros;
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
     {-7, -8, -9},  // Left Chassis Ports (negative port will reverse it!)
-    {1, 2, 3},  // Right Chassis Ports (negative port will reverse it!)
+    {1, 2, 10},  // Right Chassis Ports (negative port will reverse it!)
     11,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     360);  // Wheel RPM = cartridge * (motor gear / wheel gear)
