@@ -10,6 +10,5 @@ extern Drive chassis;
  inline pros::Motor intake(5, pros::MotorGearset::green);
  inline pros::Motor intake2(18, pros::MotorGearset::green);
  inline pros::Motor intake3(6, pros::MotorGearset::blue);
- inline pros::ADIDigitalOut gate('A');
  inline pros::ADIDigitalOut descorer('E');
  inline pros::ADIDigitalOut loaderclear('H');
