@@ -415,6 +415,8 @@ void rightside() {
   intake.move_velocity(0);
   intake2.move_velocity(0);
   intake3.move_velocity(0);
+  chassis.pid_wait();
+
   chassis.pid_turn_set(90_deg, TURN_SPEED);
   chassis.pid_drive_set(18_in, DRIVE_SPEED, true);
   chassis.pid_turn_set(45_deg, TURN_SPEED);
@@ -480,5 +482,32 @@ void leftside() {
   descorer.set_value(true);
   chassis.pid_drive_set(-17_in, DRIVE_SPEED, true);
   chassis.pid_wait();
+
+}
+
+void skills() {
+
+  chassis.pid_drive_set(33_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  intake.move_velocity(600);
+  intake2.move_velocity(-600);
+  intake3.move_velocity(-500);
+
+  loaderclear.set_value(true);
+  pros::delay(1000);
+  chassis.pid_drive_set(-2_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(6_in, 55, true);
+  pros::delay(4000);
+  
+
+  intake.move_velocity(0);
+  intake2.move_velocity(0);
+  intake3.move_velocity(0);
+  chassis.pid_wait();
+
 
 }
