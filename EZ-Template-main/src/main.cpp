@@ -68,6 +68,7 @@ void initialize() {
       // {"Combine all 3 movements", combining_movements},
       // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
       {"Right Side code", rightside}
+      {"Left Side code", leftside}
   });
 
   // Initialize chassis and auton selector
