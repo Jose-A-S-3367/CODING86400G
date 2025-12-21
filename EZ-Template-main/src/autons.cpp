@@ -379,7 +379,7 @@ void measure_offsets() {
 
 void rightside() {
  
-  chassis.pid_drive_set(33.5_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(31_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(90_deg, TURN_SPEED);
@@ -389,11 +389,14 @@ void rightside() {
   intake2.move_velocity(-600);
   intake3.move_velocity(-500);
 
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+  
   loaderclear.set_value(true);
-  pros::delay(1000);
-  chassis.pid_drive_set(-2_in, DRIVE_SPEED, true);
-  chassis.pid_drive_set(6_in, 55, true);
-  pros::delay(4000);
+  pros::delay(500);
+
+  chassis.pid_drive_set(7.75_in, DRIVE_SPEED, true);
+  pros::delay(3500);
   
 
   intake.move_velocity(0);
@@ -401,7 +404,7 @@ void rightside() {
   intake3.move_velocity(0);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-25_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-26_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);
@@ -409,31 +412,16 @@ void rightside() {
   intake3.move_velocity(500);
   pros::delay(2000);
 
+  loaderclear.set_value(false);
+  chassis.pid_wait();
+  
   chassis.pid_drive_set(9_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
-  intake.move_velocity(0);
-  intake2.move_velocity(0);
-  intake3.move_velocity(0);
-  chassis.pid_wait();
-
   chassis.pid_turn_set(90_deg, TURN_SPEED);
-  chassis.pid_drive_set(19_in, DRIVE_SPEED, true);
-  chassis.pid_turn_set(45_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  intake.move_velocity(600);
-  intake2.move_velocity(-600);
-  intake3.move_velocity(-500);
-  chassis.pid_drive_set(26_in, DRIVE_SPEED, true);
-  pros::delay(1250);
-  intake.move_velocity(-600);
-  intake2.move_velocity(600);
-  intake3.move_velocity(500);
-  pros::delay(1500);
-
-  chassis.pid_drive_set(-7_in, DRIVE_SPEED, true);
-  chassis.pid_wait();
+  
 }
 
 void leftside() {
@@ -511,5 +499,6 @@ void skills() {
   intake3.move_velocity(0);
   chassis.pid_wait();
 
-
 }
+
+  
