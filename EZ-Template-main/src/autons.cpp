@@ -404,13 +404,13 @@ void rightside() {
   intake3.move_velocity(0);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-26_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-26.25_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
   intake3.move_velocity(500);
-  pros::delay(2000);
+  pros::delay(1750);
 
   loaderclear.set_value(false);
   chassis.pid_wait();
