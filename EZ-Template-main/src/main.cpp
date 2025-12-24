@@ -67,8 +67,8 @@ void initialize() {
       // {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
       // {"Combine all 3 movements", combining_movements},
       // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-      {"Left Side code", leftside},
-      {"Right Side code", rightside}
+      {"Right Side code", rightside},
+      {"Left Side code", leftside}
       
   });
 
