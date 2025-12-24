@@ -492,7 +492,7 @@ void leftside() {
   chassis.pid_turn_set(-35_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-14.75_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-14.65_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(-90_deg, TURN_SPEED);
@@ -501,15 +501,17 @@ void leftside() {
   descorer.set_value(true);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-12.25_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-12.35_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   descorer.set_value(false);
   chassis.pid_wait();
   
-  chassis.pid_drive_set(-17_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-12_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
+  descorer.set_value(true);
+  chassis.pid_wait();
 }
 
 void skills() {
