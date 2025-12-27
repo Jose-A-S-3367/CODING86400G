@@ -4,6 +4,7 @@ void default_constants();
 
 void rightside();
 void leftside();
+void newrightside();
 void drive_example();
 void turn_example();
 void drive_and_turn();
