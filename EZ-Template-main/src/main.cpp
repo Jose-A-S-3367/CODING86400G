@@ -67,7 +67,7 @@ void initialize() {
       // {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
       // {"Combine all 3 movements", combining_movements},
       // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-      {"Right Side code", rightside},
+      {"Right Side code", newrightside},
       {"Left Side code", leftside}
       
   });
@@ -258,15 +258,15 @@ void opcontrol() {
       intake.move_velocity(600);
       intake2.move_velocity(-600);
       if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
-        intake3.move_velocity(500);
+        intake3.move_velocity(600);
       } else{
-        intake3.move_velocity(-500);
+        intake3.move_velocity(-600);
       }
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
       intake.move_velocity(-600);
       intake2.move_velocity(600);
-      intake3.move_velocity(-500);
+      intake3.move_velocity(-600);
     } else{
       intake.brake();
       intake2.brake();
