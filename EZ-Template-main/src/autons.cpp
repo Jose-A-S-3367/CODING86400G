@@ -554,10 +554,10 @@ void newrightside() {
   chassis.pid_turn_set(120_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(36_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(36.20_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(163.75_deg, TURN_SPEED);
+  chassis.pid_turn_set(163.65_deg, TURN_SPEED);
   chassis.pid_wait();
 
   intake.move_velocity(0);
@@ -586,14 +586,14 @@ void newrightside() {
   intake2.move_velocity(-600);
   intake3.move_velocity(-600);
 
-  chassis.pid_drive_set(5.65_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(6_in, DRIVE_SPEED, true);
   pros::delay(1625);
 
   intake.move_velocity(0);
   intake2.move_velocity(0);
   intake3.move_velocity(0);
 
-  chassis.pid_drive_set(-26_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-26.25_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);
@@ -619,13 +619,13 @@ void newrightside() {
   descorer.set_value(true);
   pros::delay(100);
 
-  chassis.pid_drive_set(21_in, 127, true);
+  chassis.pid_drive_set(20.85_in, 127, true);
   chassis.pid_wait();
 
   descorer.set_value(false);
   pros::delay(100);
 
-  chassis.pid_drive_set(11_in, 127, true);
+  chassis.pid_drive_set(10.75_in, 127, true);
   chassis.pid_wait();
 
 }
