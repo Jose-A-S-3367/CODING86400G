@@ -627,4 +627,7 @@ void newrightside() {
   chassis.pid_wait();
 
 }
-
+ void carry(){
+  chassis.pid_drive_set(5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+ }
