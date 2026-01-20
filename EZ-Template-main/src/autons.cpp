@@ -535,10 +535,10 @@ void leftside() {
 
 void skills() {
 
-  chassis.pid_drive_set(31_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(32.5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
   chassis.pid_wait();
 
   intake.move_velocity(600);
@@ -547,18 +547,39 @@ void skills() {
 
   chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
   chassis.pid_wait();
-
+  
   loaderclear.set_value(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(6_in, 55, true);
-  pros::delay(4000);
-  
+  chassis.pid_drive_set(9.75_in, DRIVE_SPEED, true);
+  pros::delay(3275);
 
   intake.move_velocity(0);
   intake2.move_velocity(0);
   intake3.move_velocity(0);
   chassis.pid_wait();
+
+  chassis.pid_drive_set(-21_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(14_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(74_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-180_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(15_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+  
 
 }
 
