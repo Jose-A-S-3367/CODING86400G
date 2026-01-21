@@ -580,7 +580,42 @@ void skills() {
   chassis.pid_drive_set(15_in, DRIVE_SPEED, true);
   chassis.pid_wait();
   
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
 
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  intake.move_velocity(600);
+  intake2.move_velocity(-600);
+  intake3.move_velocity(600);
+  pros::delay(1750);
+
+  loaderclear.set_value(true); 
+  pros::delay(150);
+
+  chassis.pid_drive_set(20_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+  
+  intake.move_velocity(600);
+  intake2.move_velocity(-600);
+  intake3.move_velocity(-600);
+
+  chassis.pid_drive_set(5.85, DRIVE_SPEED, true);
+  pros::delay(3250);
+
+  intake.move_velocity(0);
+  intake2.move_velocity(0);
+  intake3.move_velocity(0);
+
+  chassis.pid_drive_set(-26.65_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  intake.move_velocity(600);
+  intake2.move_velocity(-600);
+  intake3.move_velocity(600);
+  pros::delay(1750);
+  
 }
 
 void newrightside() {
