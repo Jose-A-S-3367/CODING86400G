@@ -67,10 +67,11 @@ void initialize() {
       // {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
       // {"Combine all 3 movements", combining_movements},
       // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-      {"Right Side code(1 goal)", newrightside},
+      {"Right Side code(1 goal)", skills},
       {"Left Side code", leftside},
       {"Right Side code(2 goals)", rightside},
-      {"For teammate with solo AWP", carry}
+      {"For teammate with solo AWP", carry},
+      {"For skills", skills}
       
   });
 
