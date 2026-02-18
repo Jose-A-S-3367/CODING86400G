@@ -626,10 +626,25 @@ void skills() {
   intake2.move_velocity(0);
   intake3.move_velocity(0);
 
+  chassis.pid_drive_set(-5.75_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
   loaderclear.set_value(false); 
   pros::delay(150);
 
-  chassis.pid_drive_set(-26.75_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-13_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-135_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(-90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);
