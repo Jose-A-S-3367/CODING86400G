@@ -597,6 +597,9 @@ void skills() {
   intake3.move_velocity(600);
   pros::delay(1750);
 
+  chassis.pid_drive_set(9.75_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
   chassis.pid_drive_set(5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
@@ -612,7 +615,7 @@ void skills() {
   loaderclear.set_value(true); 
   pros::delay(150);
 
-  chassis.pid_drive_set(13_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(10_in, DRIVE_SPEED, true);
   chassis.pid_wait();
   
   intake.move_velocity(600);
@@ -724,6 +727,9 @@ void skills() {
   intake3.move_velocity(600);
   pros::delay(1750);
 
+  chassis.pid_drive_set(10.5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
   chassis.pid_drive_set(5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
@@ -739,7 +745,7 @@ void skills() {
   loaderclear.set_value(true); 
   pros::delay(150);
 
-  chassis.pid_drive_set(13_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(11_in, DRIVE_SPEED, true);
   chassis.pid_wait();
   
   intake.move_velocity(600);
@@ -753,10 +759,25 @@ void skills() {
   intake2.move_velocity(0);
   intake3.move_velocity(0);
 
+  chassis.pid_drive_set(-6.5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
   loaderclear.set_value(false); 
   pros::delay(150);
 
-  chassis.pid_drive_set(-26.75_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-11_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(45_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);
