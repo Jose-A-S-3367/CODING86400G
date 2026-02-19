@@ -554,7 +554,7 @@ void skills() {
   loaderclear.set_value(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(8.75_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(8.5_in, DRIVE_SPEED, true);
   pros::delay(3275);
 
   chassis.pid_drive_set(-21_in, DRIVE_SPEED, true);
