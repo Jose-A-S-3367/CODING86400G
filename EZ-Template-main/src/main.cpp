@@ -263,7 +263,7 @@ void opcontrol() {
       if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
         intake3.move_velocity(600);
       } else{
-        intake3.move_velocity(-600);
+        intake3.move_velocity(0);
       }
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){

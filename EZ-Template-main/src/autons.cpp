@@ -387,7 +387,6 @@ void rightside() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
   chassis.pid_wait();
@@ -432,7 +431,6 @@ void rightside() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(28_in, DRIVE_SPEED, true);
   chassis.pid_wait();
@@ -455,7 +453,6 @@ void leftside() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
   chassis.pid_wait();
@@ -516,7 +513,6 @@ void leftside() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
   
   chassis.pid_drive_set(24_in, 127, true);
   chassis.pid_wait();
@@ -546,7 +542,6 @@ void skills() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
   chassis.pid_wait();
@@ -620,7 +615,7 @@ void skills() {
   
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
+  
 
   chassis.pid_drive_set(5.75_in, DRIVE_SPEED, true);
   pros::delay(3250);
@@ -673,7 +668,6 @@ void skills() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   loaderclear.set_value(true); 
   pros::delay(150);
@@ -750,7 +744,6 @@ void skills() {
   
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(6.5_in, DRIVE_SPEED, true);
   pros::delay(3250);
@@ -790,7 +783,6 @@ void skills() {
 void newrightside() {
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
   
   chassis.pid_drive_set(28_in, DRIVE_SPEED, true);
   chassis.pid_wait();
@@ -828,7 +820,6 @@ void newrightside() {
 
   intake.move_velocity(600);
   intake2.move_velocity(-600);
-  intake3.move_velocity(-600);
 
   chassis.pid_drive_set(5.85, DRIVE_SPEED, true);
   pros::delay(1625);
