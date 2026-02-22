@@ -379,7 +379,7 @@ void measure_offsets() {
 
 void rightside() {
  
-  chassis.pid_drive_set(32.5_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(32.75_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(90_deg, TURN_SPEED);
@@ -388,14 +388,14 @@ void rightside() {
   intake.move_velocity(600);
   intake2.move_velocity(-600);
 
-  chassis.pid_drive_set(-3_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-2.95_in, DRIVE_SPEED, true);
   chassis.pid_wait();
   
   loaderclear.set_value(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(9.75_in, DRIVE_SPEED, true);
-  pros::delay(2250);
+  chassis.pid_drive_set(9.73_in, DRIVE_SPEED, true);
+  pros::delay(1500);
 
   intake.move_velocity(0);
   intake2.move_velocity(0);
@@ -445,7 +445,7 @@ void rightside() {
 
 void leftside() {
 
-  chassis.pid_drive_set(33_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(32.5_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(-90_deg, TURN_SPEED);
@@ -460,7 +460,7 @@ void leftside() {
   loaderclear.set_value(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(10.25_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(9.5_in, DRIVE_SPEED, true);
   pros::delay(2250);
   
   intake.move_velocity(0);
@@ -489,7 +489,7 @@ void leftside() {
   chassis.pid_turn_set(-35_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-14.50_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(-14.25_in, DRIVE_SPEED, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(-90_deg, TURN_SPEED);
@@ -498,7 +498,7 @@ void leftside() {
   descorer.set_value(true);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-27_in, 127, true);
+  chassis.pid_drive_set(-24_in, 127, true);
   chassis.pid_wait_until(-8);
 
   descorer.set_value(false);
@@ -514,13 +514,13 @@ void leftside() {
   intake.move_velocity(600);
   intake2.move_velocity(-600);
   
-  chassis.pid_drive_set(24_in, 127, true);
+  chassis.pid_drive_set(20_in, 127, true);
   chassis.pid_wait();
 
   chassis.pid_turn_set(-45_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-16_in, 127, true);
+  chassis.pid_drive_set(-11_in, 127, true);
   chassis.pid_wait();
 
   intake.move_velocity(600);

@@ -67,7 +67,7 @@ void initialize() {
       // {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
       // {"Combine all 3 movements", combining_movements},
       // {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
-      {"Right Side code(1 goal)", skills},
+      {"Right Side code(1 goal)", leftside},
       {"Left Side code", leftside},
       {"Right Side code(2 goals)", rightside},
       {"For teammate with solo AWP", carry},
@@ -280,17 +280,17 @@ void opcontrol() {
      
 
     // descorer control
-    if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
+    if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
       descorer.set_value(true);
     }
-      else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
+      else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
       descorer.set_value(false);
       }
       // loaderclear control
-      if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+      if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
         loaderclear.set_value(false);
       }
-        else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+        else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
           loaderclear.set_value(true);
         }
 
