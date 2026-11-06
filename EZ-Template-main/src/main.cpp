@@ -8,9 +8,9 @@ using namespace pros;
 // Chassis constructor
 ez::Drive chassis(
     // These are your drive motors, the first motor is used for sensing!
-    {-2, -19, 13},  // Left Chassis Ports (negative port will reverse it!)
-    {8, 17, -20},  // Right Chassis Ports (negative port will reverse it!)
-    11,      // IMU Port
+    {-9, -8, -10},  // Left Chassis Ports (negative port will reverse it!)
+    {15, 19, 20},  // Right Chassis Ports (negative port will reverse it!)
+    12,      // IMU Port
     3.25,   // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     360);  // Wheel RPM = cartridge * (motor gear / wheel gear)
 
@@ -31,9 +31,9 @@ ez::Drive chassis(
 void initialize() {
   // Print our branding over your terminal :D
   ez::ez_template_print();
-  intake.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
-  intake2.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
-  intake3.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
+  arm.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
+  arm2.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
+  claw.set_encoder_units(E_MOTOR_ENCODER_DEGREES);
   pros::delay(500);  // Stop the user from doing anything while legacy ports configure
 
   // Look at your horizontal tracking wheel and decide if it's in front of the midline of your robot or behind it
@@ -258,41 +258,41 @@ void opcontrol() {
     // Put more user control code here!
     // intake control
     if (master.get_digital(E_CONTROLLER_DIGITAL_L2)){
-      intake.move_velocity(600);
-      intake2.move_velocity(-600);
-      if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
-        intake3.move_velocity(600);
-      } else{
-        intake3.move_velocity(0);
-      }
+      arm.move_velocity(600);
+      arm2.move_velocity(600);
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-      intake.move_velocity(-600);
-      intake2.move_velocity(600);
-      intake3.move_velocity(-600);
+      arm.move_velocity(600);
+      arm2.move_velocity(600);
     } else{
-      intake.brake();
-      intake2.brake();
-      intake3.brake();
+      arm.brake();
+      arm2.brake();
     }
-
-
+    // claw control
+    if (master.get_digital(E_CONTROLLER_DIGITAL_R2)){
+      claw.move_velocity(600);
+    }
+      else if (master.get_digital(E_CONTROLLER_DIGITAL_R1)){
+      claw.move_velocity(-600);
+    } else{
+      claw.brake();
+    }
      
 
     // descorer control
-    if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
-      descorer.set_value(true);
-    }
-      else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
-      descorer.set_value(false);
-      }
+    //if (master.get_digital(E_CONTROLLER_DIGITAL_UP)){
+      //descorer.set_value(true);
+    //}
+     // else if (master.get_digital(E_CONTROLLER_DIGITAL_DOWN)){
+      //descorer.set_value(false);
+      //}
       // loaderclear control
-      if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
-        loaderclear.set_value(false);
-      }
-        else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
-          loaderclear.set_value(true);
-        }
+      //if (master.get_digital(E_CONTROLLER_DIGITAL_X)){
+        //loaderclear.set_value(false);
+      //}
+        //else if (master.get_digital(E_CONTROLLER_DIGITAL_B)){
+          //loaderclear.set_value(true);
+        //}
 
 
 pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
