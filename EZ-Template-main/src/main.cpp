@@ -262,8 +262,8 @@ void opcontrol() {
       arm2.move_velocity(600);
     }
       else if (master.get_digital(E_CONTROLLER_DIGITAL_L1)){
-      arm.move_velocity(600);
-      arm2.move_velocity(600);
+      arm.move_velocity(-600);
+      arm2.move_velocity(-600);
     } else{
       arm.brake();
       arm2.brake();
